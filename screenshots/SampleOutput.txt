@@ -1,0 +1,30 @@
+Audit log saved at: audit_logs\audit_2026-02-09T06-51-32.607600.json
+MANUAL_REVIEW_REQUIRED
+====== Compliance Results =======
+{'status': 'MANUAL_REVIEW_REQUIRED', 'validation_results': [{'metric': 'CET1_RATIO', 'status': 'PASS', 'value': 13.33}, {'metric': 'TOTAL_CAPITAL_RATIO', 'status': 'PASS', 'value': 16.67}]}
+===== RISK FLAGS =====
+[{'field': 'at1_capital', 'severity': 'CRITICAL', 'message': 'Very low confidence for at1_capital. Manual verification required.'}]
+===== EVIDENCE TRACE =====
+{'cet1_capital': {'value': 120.0, 'source': 'data\\corep\\c01_00_instructions.pdf', 'page': '42', 'confidence': 0.8, 'snippet': '42 \n \n0140   13*  TSCR: to be made up of CET1 capital   \nThe sum of (i) and (ii) as follows:  \n(i) the CET1 capital ratio (4.5%) as per point (a) of Article 92(1) CRR;  \n(ii) the part of the P2R ratio, referred to in point (ii) of row 0130, which is \nrequired by the competent authority to be held in the form of CET1 \ncapital.  \nWhere no additional own funds requirements, to be held in the form of '}, 'at1_capital': {'value': 20.0, 'source': 'data\\corep\\c01_00_instructions.pdf', 'page': '9', 'confidence': 0.2, 'snippet': '9 \n \n(e) Template CA5 contains the data needed for calculating the effect of the  \napplication of CRR transitional provisions in own funds. CA5 will cease to exist  \nonce those transitional provisions expire.  \n \n12. The templates shall be used by all reporting entities, irrespective of the  \naccounting standards followed, although some items in the numerator are  \nspecific for entities applying I'}}
+===== COREP OUTPUT =====
+cet1_capital=120.0 at1_capital=20.0 tier2_capital=10.0 rwa=900.0 audit_references=['Article 92(1) CRR', 'Article 48(1) CRR', 'Articles 44, 45, 47 and 49 CRR'] total_own_funds=150.0 cet1_ratio=13.33 total_capital_ratio=16.67
+
+===== EXPLAINABILITY =====
+
+TOTAL_OWN_FUNDS
+formula: CET1 + AT1 + Tier2
+values_used: {'CET1': 120.0, 'AT1': 20.0, 'Tier2': 10.0}
+result: 150.0
+regulation_reference: CRR Article 72
+
+CET1_RATIO
+formula: (CET1 / RWA) * 100
+values_used: {'CET1': 120.0, 'RWA': 900.0}
+result: 13.33
+regulation_reference: CRR Article 92(1)(a)
+
+TOTAL_CAPITAL_RATIO
+formula: (Total Own Funds / RWA) * 100
+values_used: {'Total Own Funds': 150.0, 'RWA': 900.0}
+result: 16.67
+regulation_reference: CRR Article 92(1)(c)
