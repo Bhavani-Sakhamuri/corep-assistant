@@ -1,0 +1,11 @@
+confidence_thresholds:
+  low: 0.4
+  medium: 0.7
+
+severity_mapping:
+  critical: 0.4
+  warning: 0.7
+
+compliance_thresholds:
+  min_cet1_ratio: 4.5
+  min_total_capital_ratio: 8.0
